@@ -32,7 +32,6 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir /var/www/public \
     && mkdir /etc/apache2/logs \
     && rm -rf /etc/apache2/sites-enabled/*
 
@@ -49,7 +48,7 @@ COPY apache2.conf /etc/apache2/apache2.conf
 
 COPY site.conf /etc/apache2/sites-enabled/site.conf
 
-WORKDIR /var/www/html
+WORKDIR /srv
 
 EXPOSE 80
 
