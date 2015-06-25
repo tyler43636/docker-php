@@ -48,6 +48,8 @@ COPY apache2.conf /etc/apache2/apache2.conf
 
 COPY site.conf /etc/apache2/sites-enabled/site.conf
 
+COPY php.ini /etc/php5/apache2/php.ini
+
 WORKDIR /srv
 
 EXPOSE 80
